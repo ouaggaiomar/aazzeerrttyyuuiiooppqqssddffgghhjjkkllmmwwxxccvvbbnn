@@ -30,7 +30,7 @@ client.user.setGame(`£help | £invite  | `,"http://www.twitch.tv/xxomar360")
   console.log('')
 });
 const developers = ["418705499031076864"]
-const adminprefixe = "£CHANGE";
+const adminprefixe = "£";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
