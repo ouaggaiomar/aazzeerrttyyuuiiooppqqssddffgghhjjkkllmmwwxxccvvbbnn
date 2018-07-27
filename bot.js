@@ -66,7 +66,7 @@ m.sendMessage(args)
 
     while (!guild)
 
-        guild = client.guilds.get("اي دي سيرفرك - Server id");
+        guild = client.guilds.get("425771794989842450- Server id");
 
     guild.fetchInvites().then((data) => {
 
@@ -81,16 +81,14 @@ m.sendMessage(args)
     });
 
 });
+  
 
- 
 
- 
 
- 
 
 client.on("guildMemberAdd", (member) => {
 
-    let channel = member.guild.channels.get("اي دي الروم - Room id");
+    let channel = member.guild.channels.get("426048321786740746- Room id");
 
     if (!channel) {
 
@@ -112,7 +110,7 @@ client.on("guildMemberAdd", (member) => {
 
     while (!guild)
 
-        guild = client.guilds.get("اي دي سيرفرك - Server id");
+        guild = client.guilds.get("425771794989842450- Server id");
 
     guild.fetchInvites().then((data) => {
 
