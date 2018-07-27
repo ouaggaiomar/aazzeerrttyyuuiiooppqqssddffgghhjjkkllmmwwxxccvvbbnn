@@ -44,7 +44,7 @@ client.on('guildCreate', guild => {
 .addField(' الاعضاء👥 ',` [${client.users.size}] `)
 .addField('الرومات📚 ',`[${client.channels.size}]`) 
 .addField(' البنق🚀 ',`[${Date.now() - message.createdTimestamp}]`) 
-.addField('Omar#0616 + Omar#0616',`Omar#0616`)
+.addField('من تصميم ',`Omar#0616`)
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
     }
