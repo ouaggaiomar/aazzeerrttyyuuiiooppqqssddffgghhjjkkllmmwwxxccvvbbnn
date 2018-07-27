@@ -199,41 +199,6 @@ client.on("guildMemberAdd", (member) => {
      }
        });
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
-//By OMAR#0616 //By OMAR#0616 
-//جميع الحقوق محفوظهه عمر فقط . 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '472457173402910740').setName("W");
-client.channels.find('id', '472457173402910740').setName("We");
-client.channels.find('id', '472457173402910740').setName("Wel");
-client.channels.find('id', '472457173402910740').setName("Welc");
-client.channels.find('id', '472457173402910740').setName("Welco");
-client.channels.find('id', '472457173402910740').setName("Welcom");
-client.channels.find('id', '472457173402910740').setName("Welcome");
-client.channels.find('id', '472457173402910740').setName("Welcome T");
-client.channels.find('id', '472457173402910740').setName("Welcome To");
-client.channels.find('id', '472457173402910740').setName("Welcome To G");
-client.channels.find('id', '472457173402910740').setName("Welcome To Ga");
-client.channels.find('id', '472457173402910740').setName("Welcome To Gam");
-client.channels.find('id', '472457173402910740').setName("Welcome To Game");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games S");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games St");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Sta");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Stat");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Stati");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Statio");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station A");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station Ar");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station Ara");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station Arab");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station Arabi");
-client.channels.find('id', '472457173402910740').setName("Welcome To Games Station Arabic");
-  }, 3000);
-});
  
 
 
