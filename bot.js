@@ -135,7 +135,10 @@ client.on("guildMemberAdd", (member) => {
     });
 
 });
- client.on('typingStart', (ch, user) => {
+ 
+
+
+client.on('typingStart', (ch, user) => {
     if(user.presence.status === 'offline') {
         
         ch.send(`${user} هاهاهاا , كشفتك وانت تكتب ي اوف لاين`)
@@ -144,6 +147,11 @@ client.on("guildMemberAdd", (member) => {
         })
     }
 })
+
+
+
+
+
  client.on('message', async message => {
             if(message.content.includes('discord.gg')){ 
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
@@ -183,7 +191,11 @@ client.on("guildMemberAdd", (member) => {
        
     }
 })  
- client.on('message', message => {
+ 
+
+
+
+client.on('message', message => {
     if(message.content.startsWith(prefix + 'move all')) {
      if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
        if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
