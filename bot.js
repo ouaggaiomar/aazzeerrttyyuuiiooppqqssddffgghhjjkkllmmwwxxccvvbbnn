@@ -29,39 +29,27 @@ client.user.setGame(`£help | £invite  | `,"http://www.twitch.tv/xxomar360")
   console.log('')
   console.log('')
 });
-const developers = ["418705499031076864"]
-const adminprefixe = "£";
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-     if (message.content === (adminprefix + "leave")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
-  }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
+client.on('message',function(message) {
+    let toKick = message.mentions.users.first();
+    let toReason = message.content.split(" ").slice(2).join(" ");
+    let toEmbed = new Discord.RichEmbed()
+   if(message.content.startsWith(prefix + 'kick')) {
+       if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('**# - You dont have enough permissions!**');
+       if(toKick.bannable) return message.reply("**# - I cannot kick someone with a higher role than me!**");
+       if(!toReason) return message.reply("**# - Supply a reason!**")
+       if(toKick.id === message.author.id) return message.reply("**# You cannot kick yourself!**")
+       if(!message.guild.member(toKick).bannable) return message.reply("**# - I cannot ban this person!**")
+       let toEmbed;
+       toEmbed = new Discord.RichEmbed()
+       .setTitle("You have been kicked from a server!")
+       .setThumbnail(toKick.avatarURL)
+       .addField("**# - Server:**",message.guild.name,true)
+       .addField("**# - Reason:**",toReason,true)
+       .addField("**# - Kicked By:**",message.author,true)
+       if(message.member.hasPermission("KICK_MEMBERS")) return (
+           toKick.sendMessage({embed: toEmbed}).then(() => message.guild.member(toKick).kick()).then(() => message.channel.send(`**# Done! I kicked: ${toKick}**`))
+       )
+       }
 });
 
 
