@@ -226,7 +226,22 @@ client.on('message', message => {
         message.channel.send(EmojiList) 
     }
 });
- 
+
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '472457173402910740').setName("R");
+client.channels.find('id', '472457173402910740').setName("Ro");
+client.channels.find('id', '472457173402910740').setName("Roa");
+client.channels.find('id', '472457173402910740').setName("Road");
+client.channels.find('id', '472457173402910740').setName("Road ");
+client.channels.find('id', '472457173402910740').setName("Road T");
+client.channels.find('id', '472457173402910740').setName("Road To");
+client.channels.find('id', '472457173402910740').setName("Road To ");
+client.channels.find('id', '472457173402910740').setName("Road To 1");
+client.channels.find('id', '472457173402910740').setName("Road To 1K ");
+
+  }, 3000);
+});
 
 
 
