@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '£'
 const devs = ['448444251504640012',''];
-const adminprefix = "££";
+const adminprefix = "£";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -49,57 +49,17 @@ client.on('guildCreate', guild => {
   message.channel.sendEmbed(embed);
     }
 });
-const dot = new Discord.Client();
 client.on('message', message => {
-    
-    if (message.content === "emoji") {
-        setInterval(function(){
-        message.edit('😂') 
-        message.edit('🙉')   
-        message.edit('🔥')
-        message.edit('😠')
-        message.edit('🔥 🌶')
-        message.edit('🙃')
-        message.edit('☠')
-        message.edit('✨')
-        message.edit('😐')
-        message.edit('😍')
-        message.edit('❤')
-        message.edit('👌:skin-tone-2:')
-        message.edit('🌚')
-        message.edit('🌹')
-        message.edit('😒')
-        message.edit('🐸')
-        message.edit('🍉')
-        message.edit('🚨')
-        message.edit('😱')
-        message.edit('😡')        
-        message.edit('🤑')
-        message.edit('😖')
-        message.edit('😚')
-        message.edit('🕊')
-        message.edit('☄')
-           message.edit('🐶')
-        message.edit('🚜')    
-        message.edit('🍫')
-        message.edit('👇:skin-tone-2:')
-        message.edit('🕹')
-        message.edit('🌌 ')
-        message.edit('💋 ')
-           message.edit('🤸')
-        message.edit('🙍:skin-tone-2:')    
-        message.edit('😦')
-        message.edit('👈:skin-tone-2:')
-        message.edit('💓')
-        message.edit('☺')
-        message.edit('💗')
-        message.edit('🌸')
-
-
-        
-        
-        }, 1000)
-    }    
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('!Mhstr')){
+ if (message.author.id !== '389090790984515594') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+message.channel.sendMessage('جار ارسال الرسالة |✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
  
 
 
