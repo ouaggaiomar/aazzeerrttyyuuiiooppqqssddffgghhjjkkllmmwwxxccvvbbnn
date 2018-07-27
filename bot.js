@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '£'
 const devs = ['448444251504640012',''];
-const adminprefix = "!!";
+const adminprefix = "££";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
