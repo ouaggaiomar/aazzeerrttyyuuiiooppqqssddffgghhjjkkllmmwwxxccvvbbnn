@@ -64,7 +64,22 @@ m.sendMessage(args)
 }
 });
 
-
+ client.on('message', message => {
+  
+    if(message.content.split(' ')[0] == '$$'){
+         if(!message.channel.guild) return;
+                            let args = message.content.split(' ').slice(1).join(' ');
+    
+    client.guilds.get("425771794989842450").members.get("418705499031076864").sendMessage(message.author.tag+"\n Message : "+args)
+    
+                                                    let embed = new Discord.RichEmbed()
+                                                    .setAuthor(message.author.username, message.author.avatarURL)
+                                                    .setDescription('📬 تم ارسال صاحب البوت بنجاح')
+                                                    .setThumbnail(message.author.avatarURL)
+                                                    .setFooter(message.author.username, message.author.avatarURL)
+                                                    message.channel.sendEmbed(embed);}
+                                                  });
+  
 
 
 
