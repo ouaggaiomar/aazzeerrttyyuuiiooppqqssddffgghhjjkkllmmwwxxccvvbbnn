@@ -116,6 +116,19 @@ var prefix = "-";
        
 });
 
+ client.on('message', message => {
+  if(message.content == "<@" + `${client.user.id}` + ">"){
+    var embed = new Discord.RichEmbed() 
+    .setAuthor(message.author.username)
+    .setThumbnail(message.author.avatarURL)
+    .setFooter(`Requested By | ${message.author.username}`)
+    .setColor("RANDOM")
+    .addField(`{prefix}help`, "**to show The Help List**")
+    message.channel.send(`✅ | Done | Check Your DirectMessages <@${message.author.id}>`)
+    message.author.send({embed})
+  } 
+});
+  
 
 
 
