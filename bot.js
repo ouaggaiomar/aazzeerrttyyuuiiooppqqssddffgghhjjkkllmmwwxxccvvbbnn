@@ -201,7 +201,7 @@ kboosh.on("messageCreate", (msg) => {
     }
 });
 
-kboosh.connect("process.env.BOT_TOKEN")
+kboosh.connect("NDE4NzA1NDk5MDMxMDc2ODY0.DhpSZQ.TTRKEf7JA1x4tZU2h1tmSwobd7s")
 
 
 
