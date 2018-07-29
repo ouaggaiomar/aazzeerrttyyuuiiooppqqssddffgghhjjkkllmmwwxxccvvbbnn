@@ -116,7 +116,10 @@ var prefix = "-";
        
 });
 
- client.on('message', message => {
+
+
+
+client.on('message', message => {
   if(message.content == "<@" + `${client.user.id}` + ">"){
     var embed = new Discord.RichEmbed() 
     .setAuthor(message.author.username)
@@ -129,6 +132,11 @@ var prefix = "-";
   } 
 });
   
+
+
+
+
+
 client.on('message', msg => {
     if(msg.author.bot) return;
     
@@ -163,14 +171,18 @@ client.on('message', msg => {
                   }
 });
 
- client.on('message', message => {
+
+
+
+
+client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "bot owner") {
 
 
  message.author.sendMessage(`
  
- __~~اسم بوتك~~__
+ __~~Games Station Arabic~~__
  ╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱
 ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ 
  __created By__: Omar
@@ -192,5 +204,24 @@ client.on('guildCreate', guild => {
       guild.owner.send(embed)
 });
 
+
+
+
+client.on('message', message => {
+    if(message.content.startsWith(prefix + 'move all')) {
+     if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
+       if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
+    if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
+     var author = message.member.voiceChannelID;
+     var m = message.guild.members.filter(m=>m.voiceChannel)
+     message.guild.members.filter(m=>m.voiceChannel).forEach(m => {
+     m.setVoiceChannel(author)
+     })
+     message.channel.send(`**تم سحب جميع الأعضاء الي الروم الصوتي حقك.**`)
+
+
+     }
+       });
+  
 
 client.login(process.env.BOT_TOKEN);
