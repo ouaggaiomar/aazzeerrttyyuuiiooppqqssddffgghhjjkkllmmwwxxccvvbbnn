@@ -153,7 +153,15 @@ client.on('message', msg => {
     
   })
 
-
+           client.on('message', message => {
+                 var prefix = "*";
+                if(message.content === prefix + "inv") {
+                    let embed = new Discord.RichEmbed ()
+                    embed.setTitle("**:arrow_right: اضغط هنا  لادخل البوت :arrow_left:**")
+                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=471326995469434880&permissions=8&scope=bot");
+                   message.channel.sendEmbed(embed);
+                  }
+});
 
 
 
