@@ -163,46 +163,19 @@ client.on('message', msg => {
                   }
 });
 
-const Eris = require("eris");
-var kboosh = new Eris("process.env.BOT_TOKEN");
-var kboosh_id = "473181920692535328";
-                    var i = "0";
-                    var x = "0";
-kboosh.on("voiceChannelJoin", (msg) => {
-    x++;
-    kboosh.editChannel(kboosh_id, { name : "Voice ⇏「" + x + "」"});
-});
-kboosh.on("voiceChannelLeave", (msg) => {
-    x--;
-    kboosh.editChannel(kboosh_id, { name : "Voice ⇏「" + x + "」"});
-});
-
-kboosh.on("messageCreate", (msg) => {
-    if(msg.author.id !== "418705499031076864") return kboosh.createMessage('__**This Command is only for the bot Owner**__');
-    if(msg.content === "الامر معى البرفركس") {
-        let users = msg.channel.guild.members.map(m => m.user.id);
-        let messages = [];
-        messages.push(users);
-        setTimeout(function(){
-        while (i <= messages[0].length - 1) {
-            check = msg.channel.guild.members.get(messages[0][i]);
-        if(!check.voiceState.channelID){
-                i++;
-        }else{
-                x++;
-                i++;
-        }
-}
-    console.log(x);
-    kboosh.createMessage(msg.channel.id, "Voice Online Members Now Are: **"+x+"** Members!");
-    kboosh.editChannel(kboosh_id, { name : "Voice ⇏「"+x+"」"});
-    messages = [];
-}, 1);
+ client.on('message', message => {
+            if (message.content.startsWith(prefix + "bot")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField(' السيرفرات🌐',`[${client.guilds.size}]  `)
+.addField(' الاعضاء👥 ',` [${client.users.size}] `)
+.addField('الرومات📚 ',`[${client.channels.size}]`) 
+.addField(' البنق🚀 ',`[${Date.now() - message.createdTimestamp}]`) 
+.addField('** Games Station Arabic ♥`)
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
     }
 });
-
-kboosh.connect("NDE4NzA1NDk5MDMxMDc2ODY0.DhpSZQ.TTRKEf7JA1x4tZU2h1tmSwobd7s")
-
 
 
 
