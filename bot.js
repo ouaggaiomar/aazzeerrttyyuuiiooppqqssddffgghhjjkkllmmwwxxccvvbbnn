@@ -154,7 +154,7 @@ client.on('message', msg => {
   })
 
            client.on('message', message => {
-                 var prefix = "*";
+                 var prefix = "£";
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("**:arrow_right: اضغط هنا  لادخل البوت :arrow_left:**")
