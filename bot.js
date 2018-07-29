@@ -163,22 +163,27 @@ client.on('message', msg => {
                   }
 });
 
-const prefix = '£'
-client.on('message', message => {
+ client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "bot owner") {
 
-  if (message.content.startsWith( prefix + "sug")) {
-  if (!message.channel.guild) return;
-  let args = message.content.split(" ").slice(1).join(' ');
-  client.channels.get("471058958770110464").send(
-      "\n" + "**" + "● السيرفر :" + "**" +
-      "\n" + "**" + "» " + message.guild.name + "**" +
-      "\n" + "**" + " ● المرسل : " + "**" +
-      "\n" + "**" + "» " + message.author.tag + "**" +
-      "\n" + "**" + " ● الرسالة : " + "**" +
-      "\n" + "**" + args + "**")
-  }
-  });
+
+ message.author.sendMessage(`
  
+ __~~اسم بوتك~~__
+ ╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱
+♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ 
+ __created By__: Omar
+
+Server Support : https://discord.gg/MCxDhVr
+
+bot link : https://discordapp.com/api/oauth2/authorize?client_id=471326995469434880&permissions=8&scope=bot
+`);
+
+message.channel.send('**تم الارسال في الخاص**');
+
+    }
+});
 
 
 
