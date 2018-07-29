@@ -6,7 +6,7 @@ const adminprefix = "£";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`£help | £invite  | `,"http://www.twitch.tv/xxomar360")
+client.user.setGame(`£help | £inv  | `,"http://www.twitch.tv/xxomar360")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -240,7 +240,7 @@ __~~Games Station Arabic Bot~~__ By: Omar
 
 ❖ £unmutechannel ➾ فقح الشات 
 
-❖ £Botserver ➾ رابط سيرفر  سبورت 
+❖ £Botserver ➾  سيرفرات المتواجد فيها البوت 
 
 ❖ £inv ➾  رابط البوت
 
