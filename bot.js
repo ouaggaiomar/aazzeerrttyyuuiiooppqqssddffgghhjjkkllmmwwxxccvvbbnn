@@ -262,7 +262,7 @@ Server support: https://discord.gg/MCxDhVr
 bot invite link: https://discordapp.com/oauth2/authorize?client_id=471326995469434880&permissions=8&scope=bot
 
 ==================================================================
-
+**
 `);
 
     }
