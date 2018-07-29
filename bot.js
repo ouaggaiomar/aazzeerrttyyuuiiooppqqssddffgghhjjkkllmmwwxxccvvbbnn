@@ -66,7 +66,7 @@ m.sendMessage(args)
 
  client.on('message', message => {
   
-    if(message.content.split(' ')[0] == '$$'){
+    if(message.content.split(' ')[0] == '£msg'){
          if(!message.channel.guild) return;
                             let args = message.content.split(' ').slice(1).join(' ');
     
@@ -119,22 +119,6 @@ var prefix = "-";
 
 
 
-client.on('message', message => {
-  if(message.content == "<@" + `${client.user.id}` + ">"){
-    var embed = new Discord.RichEmbed() 
-    .setAuthor(message.author.username)
-    .setThumbnail(message.author.avatarURL)
-    .setFooter(`Requested By | ${message.author.username}`)
-    .setColor("RANDOM")
-    .addField(`{prefix}help`, "**to show The Help List**")
-    message.channel.send(`✅ | Done | Check Your DirectMessages <@${message.author.id}>`)
-    message.author.send({embed})
-  } 
-});
-  
-
-
-
 
 
 client.on('message', msg => {
@@ -183,8 +167,7 @@ client.on('message', message => {
  message.author.sendMessage(`
  
  __~~Games Station Arabic~~__
- ╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱
-♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ 
+♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ 
  __created By__: Omar
 
 Server Support : https://discord.gg/MCxDhVr
@@ -223,5 +206,69 @@ client.on('message', message => {
      }
        });
   
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
+
+
+ message.author.sendMessage(`
+ **
+__~~Games Station Arabic Bot~~__ By: Omar
+
+╔[❖════════════❖]╗
+             Prefix = ' £ '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+              Commands
+╚[❖════════════❖]╝
+
+
+❖ £bans ➾ عدد اشخاص المبندة من السيرفر
+
+❖ £bcall ➾ بروتكاست  لصاحب البوت فقط
+
+❖ £ownerbot ➾ لمعرفة من هو صاحب البوت 
+
+❖ £move all ➾ سحب الجميع لا رووم الي انت فيها
+
+❖ £mutechannel ➾ قفل الشات
+
+❖ £unmutechannel ➾ فقح الشات 
+
+❖ £Botserver ➾ رابط سيرفر  سبورت 
+
+❖ £inv ➾  رابط البوت
+
+❖ £msg ➾ ارسال رساله لصاحب البوت
+
+╔[❖════════════❖]╗
+                    Welcome
+╚[❖════════════❖]╝
+
+to enable welcome message do channel name "welcome"
+
+
+==================================================================
+
+Server support: https://discord.gg/MCxDhVr
+
+==================================================================
+
+bot invite link: https://discordapp.com/oauth2/authorize?client_id=471326995469434880&permissions=8&scope=bot
+
+==================================================================
+
+`);
+
+    }
+});
+
+
+
 
 client.login(process.env.BOT_TOKEN);
