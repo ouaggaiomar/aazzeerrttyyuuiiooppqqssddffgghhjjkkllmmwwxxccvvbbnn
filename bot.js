@@ -163,7 +163,7 @@ client.on('message', msg => {
                   }
 });
 
-var prefix = "£"
+const prefix = '£'
 client.on('message', message => {
 
   if (message.content.startsWith( prefix + "sug")) {
