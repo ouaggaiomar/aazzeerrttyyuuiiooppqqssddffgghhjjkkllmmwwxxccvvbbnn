@@ -166,7 +166,7 @@ client.on('message', msg => {
 var prefix = "£"
 client.on('message', message => {
 
-  if (message.content.startsWith( prefix + "اقتراح")) {
+  if (message.content.startsWith( prefix + "sug")) {
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
   client.channels.get("471058958770110464").send(
