@@ -299,6 +299,49 @@ client.on('voiceStateUpdate', (u, member) => {
 
 
 
+onst Eris = require("eris");
+var codes = new Eris("Token");
+var codes_id = "474610255943303168";
+                    var i = "0";
+                    var x = "0";
+codes.on("voiceChannelJoin", (msg) => {
+    x++;
+    codes.editChannel(codes_id, { name : "Voice ⇏「" + x + "」"});
+});
+codes.on("voiceChannelLeave", (msg) => {
+    x--;
+    codes.editChannel(codes_id, { name : "Voice ⇏「" + x + "」"});
+});
+
+codes.on("messageCreate", (msg) => {
+    if(msg.author.id !== "418705499031076864") return codes.createMessage('__**This Command is only for the bot Owner**__');
+    if(msg.content === "$voice") {
+        let users = msg.channel.guild.members.map(m => m.user.id);
+        let messages = [];
+        messages.push(users);
+        setTimeout(function(){
+        while (i <= messages[0].length - 1) {
+            check = msg.channel.guild.members.get(messages[0][i]);
+        if(!check.voiceState.channelID){
+                i++;
+        }else{
+                x++;
+                i++;
+        }
+}
+    console.log(x);
+    codes.createMessage(msg.channel.id, "Voice Online Members Now Are: **"+x+"** Members!");
+    codes.editChannel(codes_id, { name : "Voice ⇏「"+x+"」"});
+    messages = [];
+}, 1);
+    }
+});
+
+
+  
+
+codes.connect("NDcxMzI2OTk1NDY5NDM0ODgw.DkS_Bg.1vYf1cTmwHNei7nV381o9zdUvu0")
+
 
 
 client.login(process.env.BOT_TOKEN);
