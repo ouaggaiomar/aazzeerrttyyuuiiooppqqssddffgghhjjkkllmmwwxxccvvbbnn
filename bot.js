@@ -340,7 +340,7 @@ codes.on("messageCreate", (msg) => {
 
   
 
-codes.connect("NDcxMzI2OTk1NDY5NDM0ODgw.DkS_Bg.1vYf1cTmwHNei7nV381o9zdUvu0")
+codes.connect("Token")
 
 
 
