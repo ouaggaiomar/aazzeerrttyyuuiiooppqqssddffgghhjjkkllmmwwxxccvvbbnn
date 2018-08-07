@@ -270,49 +270,8 @@ bot invite link: https://discordapp.com/oauth2/authorize?client_id=4713269954694
 
 
 
-client.on('voiceStateUpdate', (u, member) => {
-  var parent = '474299582055186437';
-  var channel = '474315145485746196';
-  if(member.voiceChannel === null || member.voiceChannel !== member.guild.channels.get(channel)) return console.log(`${member.user.username}'s channel isnt the needed one.`);
-  member.guild.createChannel(`${member.user.username}`, 'voice').then(c => {
-  client.channels.get(parent).overwritePermissions(member, {
-                                CONNECT:false,
-                                         SPEAK:false
-})
-
-    if(!c) return;
-    c.setParent(parent);
-    member.setVoiceChannel(c);
-    setInterval(() => {
-      if(!c) return;
-      if(c.members.size === 0) {
-        c.delete();
-  client.channels.get(parent).overwritePermissions(member, {
-                                CONNECT:true,
-                                         SPEAK:true
-        })
-
-      }
-    }, 30000);
-  });
-});
 
 
-
-
-client.on('guildMemberAdd', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('474644573633642506').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('474610255943303168').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
-});
-
-client.on('guildMemberRemove', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('474644573633642506').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('474610255943303168').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
-});
 
 
 
