@@ -166,7 +166,7 @@ client.on('message', message => {
 
  message.author.sendMessage(`
  
- __~~Games Station Arabic~~__
+ __~~Bot~~__
 ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ 
  __created By__: Omar
 
@@ -217,7 +217,7 @@ client.on('message', message => {
 
  message.author.sendMessage(`
  **
-__~~Games Station Arabic Bot~~__ By: Omar
+__~~Games Station Arabic  &  7Moody&LeNard Bot~~__ By: Omar
 
 ╔[❖════════════❖]╗
              Prefix = ' £ '
@@ -259,9 +259,6 @@ Server support: https://discord.gg/MCxDhVr
 
 ==================================================================
 
-bot invite link: https://discordapp.com/oauth2/authorize?client_id=471326995469434880&permissions=8&scope=bot
-
-==================================================================
 **
 `);
 
